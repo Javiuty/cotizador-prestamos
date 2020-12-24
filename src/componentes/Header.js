@@ -1,7 +1,11 @@
-import React from "react";
+import React, { Fragment } from "react";
 
-const Header = () => {
-  return <h1></h1>;
+const Header = ({ titulo }) => {
+  return (
+    <Fragment>
+      <h1>{titulo}</h1>
+    </Fragment>
+  );
 };
 
 export default Header;

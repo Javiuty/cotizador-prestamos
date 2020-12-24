@@ -1,10 +1,15 @@
-import React from "react";
+import React, { Fragment } from "react";
+import Header from "./componentes/Header";
 
 const App = () => {
   return (
-    <>
-      <h1>Hola Mundo</h1>
-    </>
+    <Fragment>
+      <Header titulo="Cotizador de Préstamos" />
+      <Header />
+      <Header />
+      <Header />
+      <Header />
+    </Fragment>
   );
 };
 
