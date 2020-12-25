@@ -7,8 +7,8 @@ const Formulario = (props) => {
     guardarCantidad,
     plazo,
     guardarPlazo,
-    total,
     guardarTotal,
+    guardarCargando,
   } = props;
 
   // Definir state Error
@@ -26,11 +26,19 @@ const Formulario = (props) => {
     // Eliminar error previo
     guardarError(false);
 
-    // Realizar la cotización
-    const total = calcularTotal(cantidad, plazo);
+    // Habilitar spinner
+    guardarCargando(true);
 
-    // Una vez calculado, guardar el total
-    guardarTotal(total);
+    setTimeout(() => {
+      // Realizar la cotización
+      const total = calcularTotal(cantidad, plazo);
+
+      // Una vez calculado, guardar el total
+      guardarTotal(total);
+
+      // Deshabilitar spinner
+      guardarCargando(false);
+    }, 3000);
   };
 
   return (
