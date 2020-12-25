@@ -1,14 +1,23 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import Header from "./componentes/Header";
+import Formulario from "./componentes/Formulario";
 
 const App = () => {
+  // Definir el state
+  const [cantidad, guardarCantidad] = useState(0);
+  const [plazo, guardarPlazo] = useState("");
+
   return (
     <Fragment>
       <Header titulo="Cotizador de Préstamos" />
-      <Header />
-      <Header />
-      <Header />
-      <Header />
+      <div className="container">
+        <Formulario
+          cantidad={cantidad}
+          guardarCantidad={guardarCantidad}
+          plazo={plazo}
+          guardarPlazo={guardarPlazo}
+        />
+      </div>
     </Fragment>
   );
 };
